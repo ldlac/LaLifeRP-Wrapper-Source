@@ -1,0 +1,7 @@
+C:\Users\LD PC\Dropbox\GTA\LaLifeWrapper\bin\Release\LaLifeWrapper.net.dll
+C:\Users\LD PC\Dropbox\GTA\LaLifeWrapper\bin\Release\LaLifeWrapper.net.pdb
+C:\Users\LD PC\Dropbox\GTA\LaLifeWrapper\bin\Release\CitizenFX.Core.dll
+C:\Users\LD PC\Dropbox\GTA\LaLifeWrapper\bin\Release\NativeUI.dll
+C:\Users\LD PC\Dropbox\GTA\LaLifeWrapper\obj\Release\LaLifeWrapper.csprojResolveAssemblyReference.cache
+C:\Users\LD PC\Dropbox\GTA\LaLifeWrapper\obj\Release\LaLifeWrapper.net.dll
+C:\Users\LD PC\Dropbox\GTA\LaLifeWrapper\obj\Release\LaLifeWrapper.net.pdb
