@@ -518,7 +518,7 @@ namespace LaLifeWrapper.Police
                                 //if (Function.Call<string>(Hash.GET_PLAYER_NAME, i) == PhandCuffedName)
                                 //{
 
-                                Function.Call(Hash.TASK_FOLLOW_TO_OFFSET_OF_ENTITY, playerPed, ped, 1.5, 1.5, 1.5, 1, 1, 2, 1);
+                                Function.Call(Hash.TASK_FOLLOW_TO_OFFSET_OF_ENTITY, playerPed, ped, 1.15, 1.15, 1.15, 1, 1, 1.15, 1);
                                 //Function.Call(Hash.TASK_GO_TO_ENTITY, Game.PlayerPed, ped, -1, 0.1, 10.0, 1073741824.0, 0);
                                 //Function.Call(Hash.SET_PED_KEEP_TASK, Game.PlayerPed, true);
                                 //}
