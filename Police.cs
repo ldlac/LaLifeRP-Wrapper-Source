@@ -370,17 +370,20 @@ namespace LaLifeWrapper.Police
             Vector3 entityWorld = Function.Call<Vector3>(Hash.GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS, Game.PlayerPed, 0.0, 20.0, 0.0);
             var rayHandle = Function.Call<int>(Hash._CAST_RAY_POINT_TO_POINT, Playerpos.X, Playerpos.Y, Playerpos.Z, entityWorld.X, entityWorld.Y, entityWorld.Z, 10, Game.PlayerPed, 0);
             RaycastResult vehicleHandle = new RaycastResult(rayHandle);
-            Entity veh = vehicleHandle.HitEntity;
-            if (Function.Call<bool>(Hash.DOES_ENTITY_EXIST, veh))
+            if (vehicleHandle.DitHitEntity)
             {
-                await Delay(3000);
-                Function.Call(Hash.SET_VEHICLE_DOORS_LOCKED, veh, 1);
-                TriggerEvent("citizenv:notif", "~g~V�hicule d�verouill�");
-                TriggerEvent("InteractSound_CL:PlayOnOne", "unlock", 1.0);
-            }
-            else
-            {
-                TriggerEvent("citizenv:notif", "~r~Aucun v�hicle � proximit�.");
+                Entity veh = vehicleHandle.HitEntity;
+                if (Function.Call<bool>(Hash.DOES_ENTITY_EXIST, veh))
+                {
+                    await Delay(3000);
+                    Function.Call(Hash.SET_VEHICLE_DOORS_LOCKED, veh, 1);
+                    TriggerEvent("citizenv:notif", "~g~V�hicule d�verouill�");
+                    TriggerEvent("InteractSound_CL:PlayOnOne", "unlock", 1.0);
+                }
+                else
+                {
+                    TriggerEvent("citizenv:notif", "~r~Aucun v�hicle � proximit�.");
+                }
             }
         }
 
