@@ -88,7 +88,7 @@ namespace LaLifeWrapper.Police
             }
             else
             {
-                TriggerEvent("citizenv:notif", Strings.NO_TARGET);
+                TriggerEvent("itinerance:notif", Strings.NO_TARGET);
             }
         }
 
@@ -105,7 +105,7 @@ namespace LaLifeWrapper.Police
             }
             else
             {
-                TriggerEvent("citizenv:notif", Strings.NO_TARGET);
+                TriggerEvent("itinerance:notif", Strings.NO_TARGET);
             }
         }
 
@@ -122,16 +122,16 @@ namespace LaLifeWrapper.Police
             }
             else
             {
-                TriggerEvent("citizenv:notif", Strings.NO_TARGET);
+                TriggerEvent("itinerance:notif", Strings.NO_TARGET);
             }
         }
 
         private void FVerifP(string a, string b, string c, string d)
         {
-            TriggerEvent("citizenv:notif", a);
-            TriggerEvent("citizenv:notif", b);
-            TriggerEvent("citizenv:notif", c);
-            TriggerEvent("citizenv:notif", d);
+            TriggerEvent("itinerance:notif", a);
+            TriggerEvent("itinerance:notif", b);
+            TriggerEvent("itinerance:notif", c);
+            TriggerEvent("itinerance:notif", d);
         }
 
         private async void GiveCon(int target, int amount)
@@ -143,11 +143,11 @@ namespace LaLifeWrapper.Police
                 await Delay(5000);
                 Function.Call(Hash.CLEAR_PED_TASKS_IMMEDIATELY, Game.PlayerPed);
                 TriggerServerEvent("menupolice:givecon_s", Function.Call<int>(Hash.GET_PLAYER_SERVER_ID, target), amount);
-                TriggerEvent("citizenv:notif", "~g~Contravention de " + amount.ToString() + "$ envoy�");
+                TriggerEvent("itinerance:notif", "~g~Contravention de " + amount.ToString() + "$ envoyé");
             }
             else
             {
-                TriggerEvent("citizenv:notif", Strings.NO_TARGET);
+                TriggerEvent("itinerance:notif", Strings.NO_TARGET);
             }
         }
 
@@ -173,20 +173,20 @@ namespace LaLifeWrapper.Police
             }
             else
             {
-                TriggerEvent("citizenv:notif", "Aucun v�hicule a inspecter.");
+                TriggerEvent("itinerance:notif", "Aucun véhicule a inspecter.");
             }
         }
 
         private void FSearchVeh(dynamic vehitems)
         {
-            TriggerEvent("citizenv:notif", vehitems.name.ToString());
-            if (vehitems.name == "V�hicule vol�")
+            TriggerEvent("itinerance:notif", vehitems.name.ToString());
+            if (vehitems.name == "Véhicule volé")
             {
-                TriggerEvent("citizenv:notif", vehitems.name.ToString());
+                TriggerEvent("itinerance:notif", vehitems.name.ToString());
             }
             else
             {
-                TriggerEvent("citizenv:notif", "V�hicule �: " + vehitems.name.ToString());
+                TriggerEvent("itinerance:notif", "V�hicule �: " + vehitems.name.ToString());
             }
         }
 
@@ -202,7 +202,7 @@ namespace LaLifeWrapper.Police
             }
             else
             {
-                TriggerEvent("citizenv:notif", Strings.NO_TARGET);
+                TriggerEvent("itinerance:notif", Strings.NO_TARGET);
             }
         }
 
@@ -211,7 +211,7 @@ namespace LaLifeWrapper.Police
             for (int i = 0; i < civlenght; i++)
             {
                 if (civitems[i].quantity > 0)
-                    TriggerEvent("citizenv:notif", civitems[i].libelle + " " + civitems[i].quantity);
+                    TriggerEvent("itinerance:notif", civitems[i].libelle + " " + civitems[i].quantity);
             }
         }
 
@@ -238,7 +238,7 @@ namespace LaLifeWrapper.Police
             }
             else
             {
-                TriggerEvent("citizenv:notif", "Aucun civil � proximit� n'est menott�");
+                TriggerEvent("itinerance:notif", "Aucun civil à proximité n'est menotté");
             }
         }
 
@@ -261,7 +261,7 @@ namespace LaLifeWrapper.Police
             }
             else
             {
-                TriggerEvent("citizenv:notif", "Aucun civil � proximit� n'est menott�");
+                TriggerEvent("itinerance:notif", "Aucun civil à proximité n'est menotté");
             }
         }
 
@@ -377,12 +377,12 @@ namespace LaLifeWrapper.Police
                 {
                     await Delay(3000);
                     Function.Call(Hash.SET_VEHICLE_DOORS_LOCKED, veh, 1);
-                    TriggerEvent("citizenv:notif", "~g~V�hicule d�verouill�");
+                    TriggerEvent("itinerance:notif", "~g~Véhicule déverrouillé");
                     TriggerEvent("InteractSound_CL:PlayOnOne", "unlock", 1.0);
                 }
                 else
                 {
-                    TriggerEvent("citizenv:notif", "~r~Aucun v�hicle � proximit�.");
+                    TriggerEvent("itinerance:notif", "~r~Aucun véhicle à proximité.");
                 }
             }
         }
@@ -418,23 +418,23 @@ namespace LaLifeWrapper.Police
 
         private async void unJail(int target, int jailNumber, int police)
         {
-            TriggerEvent("citizenv:notif", "~g~ Ouverture de la cellule...");
+            TriggerEvent("itinerance:notif", "~g~ Ouverture de la cellule...");
             if (police >= 1)
             {
                 TriggerServerEvent("menupolice:unjail_s", Function.Call<int>(Hash.GET_PLAYER_SERVER_ID, target), jailNumber);
-                TriggerEvent("citizenv:notif", "~g~Cellule ouverte");
+                TriggerEvent("itinerance:notif", "~g~Cellule ouverte");
             }
             else
             {
                 await Delay(5000);
                 TriggerServerEvent("menupolice:civunjail_s", Function.Call<int>(Hash.GET_PLAYER_SERVER_ID, target), jailNumber);
-                TriggerEvent("citizenv:notif", "~g~Cellule ouverte");
+                TriggerEvent("itinerance:notif", "~g~Cellule ouverte");
             }
         }
 
         private void Funjail(int jailNumber)
         {
-            TriggerEvent("citizenv:notif", "~g~Vous avez �t� lib�r�");
+            TriggerEvent("itinerance:notif", "~g~Vous avez été libéré");
             if (jailNumber == 1)
             {
                 TriggerEvent("menupolice:cuff");
@@ -473,13 +473,13 @@ namespace LaLifeWrapper.Police
 
             //if (Game.IsControlJustReleased(1, Control.Aim))
             //{
-            //    TriggerEvent("citizenv:notif", "Allo");
+            //    TriggerEvent("itinerance:notif", "Allo");
             //    Jailed1 = true;
             //}
 
             //if (Game.IsControlJustReleased(1, Control.Attack))
             //{
-            //    TriggerEvent("citizenv:notif", "Allo");
+            //    TriggerEvent("itinerance:notif", "Allo");
             //    Jailed1 = false;
             //}
 

@@ -70,6 +70,8 @@ namespace LaLifeWrapper.Itinerance
 
         private void Notif(string text)
         {
+            byte[] bytes = System.Text.Encoding.Default.GetBytes(text);
+            text = System.Text.Encoding.UTF8.GetString(bytes);
             CitizenFX.Core.UI.Screen.ShowNotification(text);
         }
 
